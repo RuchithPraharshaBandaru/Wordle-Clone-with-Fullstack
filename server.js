@@ -15,9 +15,18 @@ mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/wordle", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    ssl: true,
+    tls: true,
+    tlsAllowInvalidCertificates: false,
+    retryWrites: true,
+    w: "majority"
   })
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error("MongoDB connection error:", err))
+  .then(() => console.log("MongoDB connected successfully"))
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+    console.error("Connection string used:", process.env.MONGODB_URI ? "[REDACTED]" : "mongodb://localhost:27017/wordle");
+    process.exit(1); // Exit if we can't connect to database
+  });
 
 
 app.use(express.json())
