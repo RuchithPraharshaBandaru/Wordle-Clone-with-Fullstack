@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: wordle-fullstack
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false # This will be set manually in Render dashboard
+      - key: SESSION_SECRET
+        generateValue: true # This will auto-generate a secure value
+    plan: free 

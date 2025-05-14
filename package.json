@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Wordle game with Express and MongoDB",
   "main": "server.js",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
