@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Wordle</h1>
+            <div id="user-info">
+                <span id="username-display"></span>
+                <button id="login-button" class="header-button">Login</button>
+                <button id="register-button" class="header-button">Register</button>
+                <button id="logout-button" class="header-button" style="display: none;">Logout</button>
+                <button id="stats-button" class="header-button">Stats</button>
+                <button id="dark-mode-button" class="header-button">
+                    <span id="dark-mode-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+        
+        <main>
+            <div id="home-screen" class="screen">
+                <h2>Welcome to Wordle</h2>
+                <p>Guess the word in 6 tries.</p>
+                <div id="home-stats" style="display: none;">
+                    <h3>Your Stats</h3>
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <span id="home-games-played" class="stat-number">0</span>
+                            <span class="stat-label">Played</span>
+                        </div>
+                        <div class="stat-box">
+                            <span id="home-win-percentage" class="stat-number">0</span>
+                            <span class="stat-label">Win %</span>
+                        </div>
+                        <div class="stat-box">
+                            <span id="home-current-streak" class="stat-number">0</span>
+                            <span class="stat-label">Current Streak</span>
+                        </div>
+                        <div class="stat-box">
+                            <span id="home-max-streak" class="stat-number">0</span>
+                            <span class="stat-label">Max Streak</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="play-button" class="primary-button">Play Game</button>
+            </div>
+            
+            <div id="game-screen" class="screen" style="display: none;">
+                <div id="board"></div>
+                <div id="keyboard"></div>
+                <div id="message"></div>
+            </div>
+            
+            <div id="result-screen" class="screen" style="display: none;">
+                <h2 id="result-title"></h2>
+                <p id="result-message"></p>
+                <p id="word-reveal"></p>
+                <button id="new-game-button" class="primary-button">New Game</button>
+                <button id="exit-button" class="secondary-button">Exit</button>
+            </div>
+            
+            <div id="stats-screen" class="screen" style="display: none;">
+                <h2>Statistics</h2>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <span id="games-played" class="stat-number">0</span>
+                        <span class="stat-label">Played</span>
+                    </div>
+                    <div class="stat-box">
+                        <span id="win-percentage" class="stat-number">0</span>
+                        <span class="stat-label">Win %</span>
+                    </div>
+                    <div class="stat-box">
+                        <span id="current-streak" class="stat-number">0</span>
+                        <span class="stat-label">Current Streak</span>
+                    </div>
+                    <div class="stat-box">
+                        <span id="max-streak" class="stat-number">0</span>
+                        <span class="stat-label">Max Streak</span>
+                    </div>
+                </div>
+                <button id="close-stats-button" class="secondary-button">Close</button>
+            </div>
+            
+            <div id="login-screen" class="screen" style="display: none;">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="primary-button">Login</button>
+                    <button type="button" id="cancel-login-button" class="secondary-button">Cancel</button>
+                </form>
+            </div>
+            
+            <div id="register-screen" class="screen" style="display: none;">
+                <h2>Register</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-username">Username</label>
+                        <input type="text" id="register-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <button type="submit" class="primary-button">Register</button>
+                    <button type="button" id="cancel-register-button" class="secondary-button">Cancel</button>
+                </form>
+            </div>
+        </main>
+        
+        <div id="toast" class="toast"></div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
