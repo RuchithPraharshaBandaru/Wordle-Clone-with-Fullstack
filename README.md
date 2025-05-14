@@ -18,15 +18,15 @@ A full-stack implementation of the popular word-guessing game Wordle, built with
    \`\`\`
 3. Create a `.env` file in the root directory with the following variables:
    \`\`\`
-   MONGODB_URI=mongodb://localhost:27017/wordle
-   SESSION_SECRET=your_session_secret_here
-   PORT=3000
+   MONGODB_URI=
+   SESSION_SECRET=
+   PORT=
    \`\`\`
 4. Start the server:
    \`\`\`
    npm start
    \`\`\`
-5. Open your browser and navigate to `http://localhost:3000`
+5. Open your browser and navigate to `http://localhost:portno.`
 
 ## How to Play
 
@@ -47,6 +47,4 @@ A full-stack implementation of the popular word-guessing game Wordle, built with
 - Database: MongoDB
 - Session Management: express-session, connect-mongo
 
-## License
 
-MIT
